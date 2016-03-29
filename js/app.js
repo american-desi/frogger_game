@@ -98,14 +98,13 @@ Player.prototype.handleInput = function(key) {
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
 var player = new Player();
-var nancy = new Enemy();
-var lucy = new Enemy();
-var betty = new Enemy();
 var allEnemies = [];
 
 for (var i = 0; i < 3; i++) {
     allEnemies.push (new Enemy());
 }
+
+console.log(allEnemies);
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
