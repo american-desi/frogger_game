@@ -8,6 +8,7 @@ var Enemy = function() {
     this.sprite = 'images/enemy-bug.png';
 };
 
+//use this to constantly check for collisions
 Enemy.prototype.update = function(dt) {
     
     if (this.x <= 550) {
@@ -20,10 +21,12 @@ Enemy.prototype.update = function(dt) {
     this.checkCollisions();
 };
 
+//draws enemy image
 Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
+//checks to see if there is a collision and returns the player back to original spot if so
 Enemy.prototype.checkCollisions = function() {
     if (this.y == -20) {
         // player is on water, reset
@@ -46,6 +49,7 @@ Enemy.prototype.checkCollisions = function() {
     }
 }
 
+//new class player
 var Player = function() {
 
     this.x = 200;
@@ -60,10 +64,12 @@ Player.prototype.update = function(dt) {
     }
 };
 
+//draws the player on the canvas!
 Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
+//translates arrow presses to movements of the player on the canvas
 Player.prototype.handleInput = function(key) {
     if (key === 'left') {
         if (this.x < 90) {
@@ -107,6 +113,7 @@ for (var i = 0; i < 3; i++) {
 
 console.log(allEnemies);
 
+//the keys allowed to play the game
 document.addEventListener('keyup', function(e) {
     var allowedKeys = {
         37: 'left',
