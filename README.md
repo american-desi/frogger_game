@@ -1,6 +1,7 @@
-frontend-nanodegree-arcade-game
+Josh's Frogger Game
 ===============================
+Welcome to my game! 
+In order to play this game you should download the entire repo and then open index.html in your browser. 
 
-Students should use this [rubric](https://www.udacity.com/course/viewer/#!/c-nd001/l-2696458597/m-2687128535) for self-checking their submission.
-
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+Directions to play: 
+1. Use UP, DOWN, LEFT, and RIGHT to navigate the boy to the river without touching the bugs
