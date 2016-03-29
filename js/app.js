@@ -26,20 +26,12 @@ Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
-//checks to see if there is a collision and returns the player back to original spot if so
+//checks to see if there is a collision and if so returns the player back to original spot
 Enemy.prototype.checkCollisions = function() {
-    if (this.y == -20) {
-        // player is on water, reset
-        player.x = 200;
-        player.y = 410;
-    } else if (this.y >= 60 && this.y <= 220) {
-        var self = this;
-        // player is on road rows, check collisions
-        // loop through each bug
+    if (this.y >= 60 && this.y <= 220) {
+        
         allEnemies.forEach(function(enemy) {
-            // is the bug on the same row as the player?
             if (enemy.y === player.y || enemy.y === player.y + 10 || enemy.y === player.y - 10) {
-                // is the bug on the player?
                 if (enemy.x >= player.x - 30 && enemy.x <= player.x + 30) {
                     player.x = 200;
                     player.y = 410;
