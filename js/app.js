@@ -25,9 +25,24 @@ Enemy.prototype.render = function() {
 };
 
 Enemy.prototype.checkCollisions = function() {
-    if (this.x < Player.x) {
-        Player.x = 200;
-        Player.y = 410;
+    if (this.y == -20) {
+        // player is on water, reset
+        player.x = 200;
+        player.y = 410;
+    } else if (this.y >= 60 && this.y <= 220) {
+        var self = this;
+        // player is on road rows, check collisions
+        // loop through each bug
+        allEnemies.forEach(function(enemy) {
+            // is the bug on the same row as the player?
+            if (enemy.y === player.y || enemy.y === player.y + 10 || enemy.y === player.y - 10) {
+                // is the bug on the player?
+                if (enemy.x >= player.x - 30 && enemy.x <= player.x + 30) {
+                    player.x = 200;
+                    player.y = 410;
+                };
+            };
+        });
     }
 }
 
